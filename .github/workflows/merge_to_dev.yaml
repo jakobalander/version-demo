@@ -20,7 +20,7 @@ jobs:
         uses: extenda/actions/conventional-version@v0
         id: version
         with:
-          version-suffix: -${{ github.sha }}-${{ steps.buildnumber.outputs.build_number }}
+          version-suffix: -${{ steps.buildnumber.outputs.build_number }}-${{ github.sha }}
 
       - name: print version
         run: echo ${{ steps.version.outputs.version }}
